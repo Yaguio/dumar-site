@@ -290,7 +290,7 @@ body{ background:
 .partner-inner::before{ content:''; position:absolute; width:440px; height:440px; right:-130px; top:-170px;
   background:radial-gradient(circle,rgba(50,92,160,.28),transparent 70%); pointer-events:none; }
 .brand-chip{ transition:transform .2s, background .2s; }
-.brand-chip:hover{ transform:translateY(-3px); background:rgba(255,255,255,.18); }
+.brand-chip:hover{ transform:translateY(-3px); background:rgba(255,255,255,.12); color:var(--bc,#fff); border-color:var(--bc,rgba(255,255,255,.3)); }
 
 /* TESTIMONIALS */
 .testi{ padding:74px 6vw; max-width:1300px; margin:0 auto; }
@@ -542,14 +542,6 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
 
 <div class="stripe-pair"><div class="stripe r"></div><div class="stripe w"></div></div>
 
-<section class="brandband">
-  <div class="brandband-inner">
-    <span class="brandband-label">Assistência técnica autorizada</span>
-    <div class="brandband-marks">
-      <span style="--bc:#20B6BD">Makita</span><span style="--bc:#FEBD17">DeWalt</span><span style="--bc:#EE1C25">Bosch</span><span style="--bc:#FFC72C">Stanley</span><span style="--bc:#FF7A1A">Black &amp; Decker</span><span style="--bc:#E4002B">Dremel</span><span style="--bc:#F5901F">Vonder</span><span style="--bc:#2F7FD6">Motomil</span><span style="--bc:#D81E28">Toyama</span>
-    </div>
-  </div>
-</section>
 <section class="feature-strip">
   <div class="feature-grid">
     <div class="feature-card">
@@ -637,16 +629,16 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
       <p>Fazemos manutenção e reparo com peças originais e garantia no serviço, para equipamentos de mais de 10 marcas.</p>
     </div>
     <div class="brand-chips">
-      <span class="brand-chip">Makita</span>
-      <span class="brand-chip">DeWalt</span>
-      <span class="brand-chip">Stanley</span>
-      <span class="brand-chip">Black &amp; Decker</span>
-      <span class="brand-chip">Bosch</span>
-      <span class="brand-chip">Dremel</span>
-      <span class="brand-chip">Vonder</span>
-      <span class="brand-chip">Motomil</span>
-      <span class="brand-chip">Garthen</span>
-      <span class="brand-chip">Toyama</span>
+      <span class="brand-chip" style="--bc:#20B6BD">Makita</span>
+      <span class="brand-chip" style="--bc:#FEBD17">DeWalt</span>
+      <span class="brand-chip" style="--bc:#FFC72C">Stanley</span>
+      <span class="brand-chip" style="--bc:#FF7A1A">Black &amp; Decker</span>
+      <span class="brand-chip" style="--bc:#EE1C25">Bosch</span>
+      <span class="brand-chip" style="--bc:#E4002B">Dremel</span>
+      <span class="brand-chip" style="--bc:#F5901F">Vonder</span>
+      <span class="brand-chip" style="--bc:#2F7FD6">Motomil</span>
+      <span class="brand-chip" style="--bc:#46B14B">Garthen</span>
+      <span class="brand-chip" style="--bc:#D81E28">Toyama</span>
     </div>
   </div>
 </section>

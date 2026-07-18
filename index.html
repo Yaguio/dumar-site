@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dumar Máquinas e Serviços — Loja e Assistência Técnica em Araruama/RJ</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23142A4D'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='bold' font-size='18' fill='%23ffffff' text-anchor='middle'%3ED%3C/text%3E%3Crect x='9' y='25' width='14' height='2.5' rx='1' fill='%23D6282F'/%3E%3C/svg%3E">
 <meta name="description" content="Dumar Máquinas e Serviços em Araruama/RJ. Venda de ferramentas, peças originais e assistência técnica autorizada multimarcas desde 1989. Orçamento pelo WhatsApp.">
 <meta name="theme-color" content="#142A4D">
 <meta property="og:title" content="Dumar Máquinas e Serviços — Araruama/RJ">
@@ -340,11 +341,24 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
 .logo-group{ flex-shrink:0; }
 .mega-links{ flex:1 1 auto; justify-content:space-between; flex-wrap:nowrap; gap:18px; min-width:0; padding-left:48px; }
 .nav-actions{ flex-shrink:0; }
+.nav-burger{ display:none; flex-direction:column; justify-content:center; gap:5px; width:46px; height:40px; padding:0 11px; background:none; border:1px solid rgba(255,255,255,.22); border-radius:10px; cursor:pointer; flex-shrink:0; }
+.nav-burger span{ display:block; height:2px; width:100%; background:#fff; border-radius:2px; transition:transform .25s, opacity .2s; }
+.nav-burger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-burger.active span:nth-child(2){ opacity:0; }
+.nav-burger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+.mobile-menu{ display:none; background:#0f1d34; border-top:1px solid rgba(255,255,255,.08); padding:8px 6vw 20px; position:relative; z-index:5; }
+.mobile-menu.open{ display:block; animation:mmIn .22s ease; }
+@keyframes mmIn{ from{ opacity:0; transform:translateY(-6px);} to{ opacity:1; transform:none;} }
+.mobile-menu a{ display:block; padding:14px 4px; color:rgba(255,255,255,.85); text-decoration:none; font-weight:600; letter-spacing:.02em; border-bottom:1px solid rgba(255,255,255,.07); }
+.mobile-menu a:hover{ color:#fff; }
+.mobile-menu .mm-cta{ margin-top:14px; background:var(--red); color:#fff; text-align:center; border-radius:100px; border-bottom:none; padding:14px; font-weight:700; }
 @media (max-width:1400px){
   .topbar .links, .mega-links, .icon-btn{ display:none; }
-  nav.mainnav{ justify-content:center; gap:16px; }
-  .logo-group{ margin:0 auto; }
+  .nav-burger{ display:flex; }
+  nav.mainnav{ justify-content:space-between; gap:16px; }
+  .logo-group{ margin:0; }
 }
+@media (min-width:1401px){ .mobile-menu{ display:none !important; } }
 
 /* SEARCH toggle + barra deslizante */
 .mega-links .search-toggle{ background:none; border:1px solid rgba(255,255,255,.22); color:rgba(255,255,255,.85);
@@ -458,13 +472,13 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
   </div>
   <div class="social">
     <span>Siga a Dumar:</span>
-    <a href="#" aria-label="Facebook" class="social-icon">
+    <a href="https://www.facebook.com/dumarcomercio/" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.17 2.1 15.95 2 14.66 2 11.98 2 10 3.66 10 6.7v2.8H7v4h3V22h4z"/></svg>
     </a>
     <a href="#" aria-label="Instagram" class="social-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a href="#" aria-label="WhatsApp" class="social-icon">
+    <a href="https://wa.me/5522988733904?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Dumar." target="_blank" rel="noopener" aria-label="WhatsApp" class="social-icon">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.06-1.33A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.17-1.14l-.3-.18-3.1.82.83-3.02-.2-.31A8.2 8.2 0 1 1 12 20.2zm4.52-6.13c-.25-.12-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.13-.17.25-.65.8-.79.96-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
     </a>
   </div>
@@ -484,7 +498,18 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
     <a href="#servicos">Serviços</a>
     <button type="button" class="search-toggle" aria-label="Buscar no site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
   </div>
-</nav>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" data-mm>Início</a>
+  <a href="#assistencia" data-mm>Assistência Autorizada</a>
+  <a href="#catalogo" data-mm>Catálogo</a>
+  <a href="#avaliacoes" data-mm>Avaliações</a>
+  <a href="#servicos" data-mm>Serviços</a>
+  <a href="#local" data-mm>Onde estamos</a>
+  <a class="mm-cta" href="https://wa.me/5522988733904?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." data-mm>Solicitar orçamento</a>
+</div>
+
 <div class="searchbar" id="searchbar">
   <form class="searchbar-inner" role="search" onsubmit="return false;">
     <span class="searchbar-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></span>
@@ -737,6 +762,16 @@ nav.mainnav{ flex-wrap:nowrap; gap:26px; }
     f.title='Mapa da loja Dumar'; f.src=w.getAttribute('data-src');
     w.innerHTML=''; w.appendChild(f);
   });
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('navBurger'), m=document.getElementById('mobileMenu');
+  if(!b||!m) return;
+  function set(open){ m.classList.toggle('open',open); b.classList.toggle('active',open); b.setAttribute('aria-expanded',open?'true':'false'); }
+  b.addEventListener('click',function(){ set(!m.classList.contains('open')); });
+  m.querySelectorAll('[data-mm]').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
 })();
 </script>
 </body>
